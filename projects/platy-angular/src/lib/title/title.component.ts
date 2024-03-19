@@ -1,4 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Inject, Input } from '@angular/core';
+import { InjectionToken } from '@angular/core';
+
+export const TITLE_CONFIG = new InjectionToken<any>('title-config');
 
 @Component({
   selector: 'lib-title',
@@ -11,6 +14,6 @@ export class TitleComponent {
   @Input() dynamicClass!: string; 
   @Input() dynamicLabel!: string; 
 
-  constructor() {}
+  constructor(@Inject(TITLE_CONFIG) private config: any) { }
 
 }
