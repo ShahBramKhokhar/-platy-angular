@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, Input } from '@angular/core';
 import { InjectionToken } from '@angular/core';
 
 export const LABEL_CONFIG = new InjectionToken<any>('label-config');
@@ -9,9 +9,16 @@ export const LABEL_CONFIG = new InjectionToken<any>('label-config');
   standalone: true,
   imports: [],
   templateUrl: './label.component.html',
-  styleUrl: './label.component.css'
+  styleUrl: './label.component.scss'
 })
 export class LabelComponent {
-  constructor(@Inject(LABEL_CONFIG) private config: any) { }
+  @Input() dynamicClass!: string; 
+  @Input() dynamicLabel!: string; 
+
+  public config: any; // Making config property public
+
+  constructor(@Inject(LABEL_CONFIG) config: any) {
+    this.config = config;
+  }
 
 }

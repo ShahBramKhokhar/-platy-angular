@@ -14,6 +14,9 @@ export class TitleComponent {
   @Input() dynamicClass!: string; 
   @Input() dynamicLabel!: string; 
 
-  constructor(@Inject(TITLE_CONFIG) private config: any) { }
+  public config: any; 
 
+  constructor(@Inject(TITLE_CONFIG) config: any) {
+    this.config = config;
+  }
 }
