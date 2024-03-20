@@ -15,9 +15,11 @@ export class TitleComponent {
   @Input() title!: string; 
   @Input() titleClass!: string; 
 
- 
 
- constructor(){
+   constructor(){
+  
+  
+  }
 
- }
+
 }
