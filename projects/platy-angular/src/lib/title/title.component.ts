@@ -3,6 +3,7 @@ import { InjectionToken } from '@angular/core';
 
 export const TITLE_CONFIG = new InjectionToken<any>('title-config');
 
+
 @Component({
   selector: 'lib-title',
   standalone: true,
@@ -11,12 +12,12 @@ export const TITLE_CONFIG = new InjectionToken<any>('title-config');
   styleUrl: './title.component.scss'
 })
 export class TitleComponent {
-  @Input() dynamicClass!: string; 
-  @Input() dynamicLabel!: string; 
+  @Input() title!: string; 
+  @Input() titleClass!: string; 
 
-  public config: any; 
+ 
 
-  constructor(@Inject(TITLE_CONFIG) config: any) {
-    this.config = config;
-  }
+ constructor(){
+
+ }
 }

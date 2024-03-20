@@ -12,13 +12,12 @@ export const LABEL_CONFIG = new InjectionToken<any>('label-config');
   styleUrl: './label.component.scss'
 })
 export class LabelComponent {
-  @Input() dynamicClass!: string; 
-  @Input() dynamicLabel!: string; 
+; 
 
-  public config: any; // Making config property public
+  @Input() labelText!: string; 
+  @Input() labelClass!: string; 
 
-  constructor(@Inject(LABEL_CONFIG) config: any) {
-    this.config = config;
-  }
+
+       constructor(){}
 
 }
